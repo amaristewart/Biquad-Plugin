@@ -1,4 +1,4 @@
-# Biquad-Plugin
+# Biquad Plugin
 
 Equalizer plugin made in MATLAB and exported to a JUCE plugin.
 
