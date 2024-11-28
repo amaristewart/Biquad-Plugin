@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="biquad\Source">
+      <UniqueIdentifier>{9DE1EBB6-21DB-A955-5584-0D727339D893}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="biquad">
+      <UniqueIdentifier>{F99279FC-A2AF-30DD-093D-CA8F2A7CFAD5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JUCE Library Code">
+      <UniqueIdentifier>{7ED5A90E-41AF-A1EF-659B-37CEEAB9BA61}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\biquadPluginProcessor.cpp">
+      <Filter>biquad\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\rt_nonfinite.cpp">
+      <Filter>biquad\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\rtGetNaN.cpp">
+      <Filter>biquad\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\rtGetInf.cpp">
+      <Filter>biquad\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\biquad.cpp">
+      <Filter>biquad\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_basics.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_devices.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_formats.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_plugin_client_ARA.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_processors.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_processors_ara.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_processors_lv2_libs.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_utils.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_core.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_core_CompilationTime.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_data_structures.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_events.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_graphics.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_graphics_Harfbuzz.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_graphics_Sheenbidi.c">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_gui_basics.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_gui_extra.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\biquadPluginEditor.h">
+      <Filter>biquad\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\biquadPluginEditorResources.h">
+      <Filter>biquad\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\coder_array.h">
+      <Filter>biquad\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\coder_bounded_array.h">
+      <Filter>biquad\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\rtwtypes.h">
+      <Filter>biquad\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\biquad_types.h">
+      <Filter>biquad\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\rt_nonfinite.h">
+      <Filter>biquad\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\rtGetNaN.h">
+      <Filter>biquad\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\rtGetInf.h">
+      <Filter>biquad\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\biquad.h">
+      <Filter>biquad\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\biquad_types1.h">
+      <Filter>biquad\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\tmwtypes.h">
+      <Filter>biquad\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\JuceLibraryCode\AppConfig.h">
+      <Filter>JUCE Library Code</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h">
+      <Filter>JUCE Library Code</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\JuceLibraryCode\JucePluginDefines.h">
+      <Filter>JUCE Library Code</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
