@@ -1,4 +1,14 @@
 classdef biquad < audioPlugin
+    %{
+INSTRUCTIONS:
+1. add a GUI layout with Matlab controls or filmstrip controls
+2. replace the 'filter' command with your own DSP code in processBiquad.m
+3. add a Q setting to each of these filters
+4. Add one more effects (built-in or custom)
+5. use a parameter ramper to make the controls smooth
+6. Export to a JUCE project, and compile a VST3 or AU
+7. [ENGAGE] Demonstrate your effect inserted on an audio track
+    %}
 
     properties % parameters & their default values
         % BIQUAD
@@ -296,18 +306,8 @@ classdef biquad < audioPlugin
             w0 = 2*pi*f0/plugin.fs;
             alpha = sin(w0)/(2*Q);
             %A = sqrt(db2mag(gain));
-            A = 10^(gain/40);
+            A = 10^(db2mag(gain)/40);
             
-            if abs(gain) < 0.001
-                plugin.filter_HS.a0 = 1;
-                plugin.filter_HS.a1 = 0;
-                plugin.filter_HS.a2 = 0;
-                plugin.filter_HS.b0 = 1;
-                plugin.filter_HS.b1 = 0;
-                plugin.filter_HS.b2 = 0;
-                return;
-            end
-
             plugin.filter_HS.a0 =    A*( (A+1) + (A-1)*cos(w0) + 2*sqrt(A)*alpha ); 
             plugin.filter_HS.a1 = -2*A*( (A-1) + (A+1)*cos(w0)                   );
             plugin.filter_HS.a2 =    A*( (A+1) + (A-1)*cos(w0) - 2*sqrt(A)*alpha );
@@ -341,18 +341,8 @@ classdef biquad < audioPlugin
             w0 = 2*pi*f0/plugin.fs;
             alpha = sin(w0)/(2*Q);
             %A = sqrt(db2mag(gain));
-            A = 10^(gain/40);
+            A = 10^(db2mag(gain)/40);
             
-            if abs(gain) < 0.001
-                plugin.filter_HMF.a0 = 1;
-                plugin.filter_HMF.a1 = 0;
-                plugin.filter_HMF.a2 = 0;
-                plugin.filter_HMF.b0 = 1;
-                plugin.filter_HMF.b1 = 0;
-                plugin.filter_HMF.b2 = 0;
-                return;
-            end
-
             if strcmp(plugin.typeHMF,'Band')
                 plugin.filter_HMF.a0 =   alpha*A;
                 plugin.filter_HMF.a1 =   0;
@@ -397,21 +387,11 @@ classdef biquad < audioPlugin
 
             Q = plugin.lmfQSmoother.step();
             f0 = plugin.lmfFreqSmoother.step();
-            gain = plugin.lmfGainSmoother.step();
+            gain = plugin.lmfQSmoother.step();
             w0 = 2*pi*f0/plugin.fs;
             alpha = sin(w0)/(2*Q);
             %A = sqrt(db2mag(gain));
-            A = 10^(gain/40);
-
-            if abs(gain) < 0.001
-                plugin.filter_LMF.a0 = 1;
-                plugin.filter_LMF.a1 = 0;
-                plugin.filter_LMF.a2 = 0;
-                plugin.filter_LMF.b0 = 1;
-                plugin.filter_LMF.b1 = 0;
-                plugin.filter_LMF.b2 = 0;
-                return;
-            end
+            A = 10^(db2mag(gain)/40);
             
             if strcmp(plugin.typeLMF,'Band')
                 plugin.filter_LMF.a0 =   alpha*A;
@@ -435,6 +415,7 @@ classdef biquad < audioPlugin
                 plugin.filter_LMF.b1 =  -2*cos(w0);
                 plugin.filter_LMF.b2 =   1 - alpha;
             end
+            freqz([b0 b1 b2], [a0 a1 a2]);
         end
         
         
@@ -463,7 +444,7 @@ classdef biquad < audioPlugin
             plugin.filter_HPF.b0 =   1 + alpha;
             plugin.filter_HPF.b1 =  -2*cos(w0);
             plugin.filter_HPF.b2 =   1 - alpha;
-
+            
         end
 
         function set.LPF_FREQ(plugin, val)
@@ -499,3 +480,4 @@ classdef biquad < audioPlugin
     end
 
 end
+

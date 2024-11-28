@@ -2,7 +2,6 @@ function [y, w] = processBiquad(x, filt, ch)
 
     N = length(x);  % Number of input samples
     y = zeros(N, 1); % Output vector of zeroes
-    % w = zeros(N, 1); % Intermediate vector of zeroes
 
     % Filter coefficients
 
