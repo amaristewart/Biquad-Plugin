@@ -1,7 +1,6 @@
 classdef biquad < audioPlugin
 
     properties % parameters & their default values
-        % BIQUAD
         HS_FREQ = 15000;      
         HS_GAIN = 0;
         HS_Q = 0.5;
