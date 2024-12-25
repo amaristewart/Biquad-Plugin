@@ -22,8 +22,8 @@ classdef biquad < audioPlugin
         fs = getSampleRate(audioPlugin);
         fn = 22050;
         
-        typeHMF = 'Band';
-        typeLMF = 'Band';
+        typeHMF = 'Peaking';
+        typeLMF = 'Peaking';
 
         BYPASS_BIQUAD = 'off';
     end
